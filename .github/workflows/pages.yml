@@ -14,6 +14,5 @@ jobs:
       - name: 查看
         run: |
           git clone https://${{secrets.R}}:${{secrets.TOKEN}}@gitee.com/${{secrets.R}}/${{secrets.R1}}.git
-          ls
           
           
