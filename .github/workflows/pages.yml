@@ -13,11 +13,12 @@ jobs:
         uses: actions/checkout@v4
       - name: 查看
         run: |
-          nohup git clone https://${{secrets.R}}:${{secrets.TOKEN}}@gitee.com/${{secrets.R}}/${{secrets.R1}}.git > nohup.log &
+          nohup git clone https://${{secrets.R}}:${{secrets.TOKEN}}@gitee.com/${{secrets.R}}/personal.git > nohup.log &
           retries=30
             for i in $(seq 1 $retries); do
               ls
               ls personal
+              du -h personal
             sleep 10
           done
           
