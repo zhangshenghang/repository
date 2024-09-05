@@ -54,9 +54,11 @@ public class Main {
         String relativePath = file.getPath().replace(baseDir, "");
 
         if (relativePath.endsWith(".md")) {
-            if (!file.getName().matches("^\\d{2}.*")) {
-                System.out.println("Skipping non-formal file: " + file.getName());
-                return;
+            if(!SystemUtil.getOsInfo().isMac()) {
+                if (!file.getName().matches("^\\d{2}.*")) {
+                    System.out.println("Skipping non-formal file: " + file.getName());
+                    return;
+                }
             }
 
             System.out.println("Processing Markdown file: " + file.getName());
